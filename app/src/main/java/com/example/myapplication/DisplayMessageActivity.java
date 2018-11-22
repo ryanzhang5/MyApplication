@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import static com.example.myapplication.MainActivity.EXTRA_MESSAGE;
@@ -21,6 +22,13 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textView.setText(message);
 
         WebView myWebView = findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+        });
+
         myWebView.loadUrl("https://www.baidu.com");
     }
 }
