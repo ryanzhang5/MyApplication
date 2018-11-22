@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import static com.example.myapplication.MainActivity.EXTRA_MESSAGE;
@@ -18,5 +19,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         String message = intent.getStringExtra(EXTRA_MESSAGE);
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
+
+        WebView myWebView = findViewById(R.id.webView);
+        myWebView.loadUrl("https://www.baidu.com");
     }
 }
